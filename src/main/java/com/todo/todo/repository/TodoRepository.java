@@ -18,5 +18,8 @@ public interface TodoRepository extends JpaRepository<Todo, Integer> {
 	
 	@Query("SELECT obj FROM Todo obj WHERE obj.finalizacao = true")
 	public List<Todo>Finished();
+
+
+	public Todo save(Todo todo, Integer id);
 	
 }

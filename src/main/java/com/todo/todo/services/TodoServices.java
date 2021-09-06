@@ -19,8 +19,9 @@ public class TodoServices {
 	public Todo FindById(Integer id) 
 	{
 		
-		Optional<Todo>result = TodoService.findById(id);
-		return result.orElse(null);
+		Optional<Todo> resultQuery = TodoService.findById(id);
+		Todo Result = resultQuery.get();
+		return Result;
 		
 		
 	}
@@ -68,6 +69,21 @@ public class TodoServices {
     	 
     	 
      }
+
+	public Todo update(Integer id, Todo todo) {
+		Optional<Todo> QueryTodo = TodoService.findById(id);
+		Todo Result = QueryTodo.get();
+		Result.setTitulo(todo.getTitulo());
+		Result.setDescricao(todo.getDescricao());
+		Result.setDataParaFinalizar(todo.getDataParaFinalizar());
+		Result.setFinalizacao(todo.isFinalizacao());
+		return Result;
+	    
+		
+		
+		
+		
+	}
 
      
     

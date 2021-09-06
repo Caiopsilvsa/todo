@@ -20,6 +20,6 @@ public interface TodoRepository extends JpaRepository<Todo, Integer> {
 	public List<Todo>Finished();
 
 
-	public Todo save(Todo todo, Integer id);
+	
 	
 }
